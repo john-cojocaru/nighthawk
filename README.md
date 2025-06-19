@@ -1,166 +1,115 @@
-Nighthawk Smart Solutions Website
+# Nighthawk Smart Solutions - Web Platform
 
-📘 Overview
+This is a full-featured web application for managing client services, bookings, and internal messaging, built for **Nighthawk Smart Solutions**. The system supports both **client-side interaction** and an **admin dashboard** for managing operations.
 
-A fully featured website for Nighthawk Smart Solutions, a company specializing in fiber optic cabling, commercial network installations, and smart home systems. Built using PHP, MySQL, HTML/CSS/JS, and designed following Agile methodology, the project provides a seamless platform for service booking, client communication, and internal content management.
+---
 
-🚀 Features
+## 🛠 Technologies Used
 
-Responsive Web Design: Clean, modern UI with responsive layouts for mobile and desktop.
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Backend:** PHP 8.x
+- **Database:** MySQL (MariaDB) via phpMyAdmin
+- **Local Server:** XAMPP
 
-Interactive Contact Form: Professional inquiry form with integrated backend processing.
+---
 
-Booking System: Calendar-based client meeting scheduler with time slot selection.
+## 📁 Project Structure
 
-Admin CMS Panel: CRUD for services, appointments, clients, and company portfolio.
+nighthawk/
+├── booking.php # Client booking page
+├── contact.php # Contact/message page
+├── index.php # Homepage
+├── login.html / register.html
+├── admin_dashboard.php # Admin main panel
+├── admin_manage_services.php
+├── admin_manage_bookings.php
+├── backend/
+│ ├── db.php
+│ ├── user_register.php / user_login.php
+│ ├── admin_add_service.php / admin_edit_service.php / admin_delete_service.php
+│ ├── booking_handler.php
+│ ├── message_reply.php
+├── img/ # Service & logo images
+├── css/
+│ └── style.css
+└── sql/
+└── nighthawk_db.sql # Full DB schema and sample data
 
-User Authentication: Secure login with role-based access control for admins.
+pgsql
+Copy
+Edit
 
-Validation & Security: Backend validation, session handling, and secure password storage.
+---
 
-Portfolio Gallery: Showcase of past commercial and residential projects.
+## ✅ Features
 
-Real-Time Logs & Error Handling: Admin can review error logs for system transparency.
+### 🔐 Authentication
+- Secure client & admin login/register system
+- Role-based access control
 
-📋 Prerequisites
+### 🧰 Services Management
+- Admin can add, edit, delete services via `admin_manage_services.php`
+- All services are displayed dynamically on the homepage and booking forms
 
-PHP 8.1 or later
+### 📆 Booking System
+- Clients can book appointments from available services
+- Admin can view, confirm, cancel, or delete bookings
+- Admin panel styled identically to client-facing version
 
-MySQL 5.7 or later
+### ✉️ Messaging System
+- Logged-in users can contact admin
+- Admin and users can reply in threads (threaded mailbox UI)
+- Messages filtered by Unread / Sent / All
+- Status indicators: unread → read when opened
 
-XAMPP or similar local server stack
+---
 
-🛠️ Installation
+## 🔧 Setup Instructions
 
-Clone the repository:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/john-cojocaru/nighthawk.git
+Import the Database
 
-git clone https://github.com/your-username/nighthawk-smart-solutions.git
+Open phpMyAdmin
 
-Move into the project directory:
+Create a database named nighthawk_db
 
-cd nighthawk-smart-solutions
+Import the nighthawk_db.sql file
 
-Start XAMPP and ensure Apache and MySQL are running.
+Run the Server
 
-Import nighthawk_db.sql into phpMyAdmin.
+Start XAMPP (Apache + MySQL)
 
-Configure database settings in config.php.
+Place the project folder inside htdocs/
 
-Open the browser and navigate to:
+Visit http://localhost/nighthawk
 
-http://localhost/nighthawk-smart-solutions
+Admin Credentials
 
-📖 Usage
+Email: admin@nighthawk.com
 
-Admin Login
+Password: (refer to your stored hash or set a new one)
 
-Go to /admin/login.php
+📸 Screenshots
+Client Booking Interface
 
-Enter admin credentials
+Admin Service Management
 
-Access dashboard to manage:
+Admin Booking Panel
 
-Services
+Messaging Mailbox View (Client & Admin)
+(Add screenshots to your GitHub repo)
 
-Bookings
+📌 Notes
+All styles are unified in css/style.css
 
-Clients
+Messages and bookings use dynamic database-driven UI
 
-Portfolio projects
+This is a fully working local development prototype using XAMPP
 
-Client Booking Flow
-
-Navigate to Contact/Booking page
-
-Fill in name, email, preferred date/time
-
-Submit the form
-
-Confirmation message shown
-
-CMS Functionality
-
-Add/edit/delete services and appointments
-
-Upload portfolio images and details
-
-View inquiry and booking list
-
-⚙️ Configuration
-
-Update config.php with your database credentials:
-
-$host = 'localhost';
-$db = 'nighthawk_db';
-$user = 'root';
-$pass = '';
-
-🧪 Testing
-
-Manual functional testing for each module (forms, CMS, login)
-
-Validation checks and booking submission logs
-
-SQL script tested via phpMyAdmin
-
-🧱 Project Structure
-
-📁 /admin
-  ├── dashboard.php
-  ├── manage_services.php
-  ├── manage_appointments.php
-📁 /assets
-  ├── /css, /js, /images
-📁 /includes
-  ├── config.php
-  ├── db_connect.php
-📁 /public
-  ├── index.php
-  ├── contact.php
-  ├── booking.php
-📁 /uploads
-  ├── portfolio images
-
-🔐 Security
-
-Passwords hashed with bcrypt
-
-Input validation to prevent SQL injection and XSS
-
-Session-based authentication for admin area
-
-📦 Deployment
-
-Initially developed in XAMPP
-
-Ready for live hosting (Namecheap/GoDaddy/Hostinger)
-
-Upload all files to public_html and import database
-
-📈 Roadmap
-
-Email notifications for bookings
-
-Admin calendar view of upcoming appointments
-
-Image optimisation for portfolio
-
-Dashboard statistics widgets
-
-Contact form 
-
-🙌 Acknowledgments
-
-Visual Paradigm for diagrams
-
-Trello for task tracking
-
-HTML5  design inspiration
-
-PHP manual for reference
-
-📄 License
-
-This project is licensed under the MIT License.
+📬 Contact
+Project developed by John Cojocaru, Dorina Habravan, Alex Cosmin Barbulescu, Eugen Oprea
+© 2025 Nighthawk Smart Solutions
 
 
